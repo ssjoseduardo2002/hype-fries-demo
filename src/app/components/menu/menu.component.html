@@ -5,40 +5,28 @@
       <h2 class="menu-title">Nuestro Menú 🔥</h2>
     </div>
 
+    <!-- El grid ahora es dinámico gracias a Angular -->
     <div class="menu-grid">
-      <!-- Tarjeta 1 -->
-      <div class="menu-card">
-        <div class="card-badge">Más Vendida 🔥</div>
-        <div class="card-content">
-          <h3>Hype Fries Clásicas</h3>
-          <p>Nuestras papas icónicas espolvoreadas con sazonador de la casa, bañadas en queso cheddar derretido y un toque de tocino crujiente.</p>
-          <div class="card-footer">
-            <span class="price">$85</span>
-          </div>
+      <div class="menu-card" *ngFor="let item of menuItems">
+        
+        <!-- Badge dinámico (SÓLO aparece si el platillo tiene uno asignado) -->
+        <div class="card-badge" *ngIf="item.badge" [ngClass]="item.badgeClass">
+          {{ item.badge }}
         </div>
-      </div>
+        
+        <!-- 📸 El contenedor de la imagen protagónica -->
+        <div class="card-image-wrapper">
+          <img [src]="item.image" [alt]="item.title" class="card-img" />
+        </div>
 
-      <!-- Tarjeta 2 -->
-      <div class="menu-card">
         <div class="card-content">
-          <h3>Monster BBQ Fries</h3>
-          <p>Papas rústicas acompañadas de tiras de pollo crujiente, bañadas en salsa BBQ ahumada y aderezo ranch artesanal.</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
           <div class="card-footer">
-            <span class="price">$110</span>
+            <span class="price">{{ item.price }}</span>
           </div>
         </div>
-      </div>
-
-      <!-- Tarjeta 3 -->
-      <div class="menu-card">
-        <div class="card-badge nuevo">Nueva receta 🧀</div>
-        <div class="card-content">
-          <h3>Chilli Cheese Fries</h3>
-          <p>Para los que buscan intensidad: papas fritas cubiertas con nuestro chilli con carne de la casa, extra queso fundido y rodajas de jalapeño.</p>
-          <div class="card-footer">
-            <span class="price">$95</span>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
