@@ -1,0 +1,20 @@
+<section class="instagram-section">
+  <div class="section-header">
+    <h2>SÍGUENOS EN INSTAGRAM</h2>
+    <p>@hype.fries — Antojo real en movimiento</p>
+  </div>
+
+  <div class="gallery-grid">
+    @for (post of instagramPosts; track post.id) {
+      <a [href]="post.link" target="_blank" rel="noopener noreferrer" class="gallery-item">
+        <div class="image-wrapper">
+          <img [src]="post.image" alt="Hype Fries Post" class="gallery-img" loading="lazy">
+          <div class="overlay">
+            <i class="instagram-icon">📸</i> <!-- O el icono que uses de FontAwesome/Lucide -->
+            <span>Ver en Instagram</span>
+          </div>
+        </div>
+      </a>
+    }
+  </div>
+</section>
