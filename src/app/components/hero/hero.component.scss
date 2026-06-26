@@ -1,128 +1,92 @@
 .hero-section {
   position: relative;
-  min-height: 85vh; // Gran altura de pantalla
-  padding-top: 100px; // Evita que el navbar fijo lo tape
+  height: 100vh; // Cambiado a pantalla completa para el impacto visual
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   overflow: hidden;
   text-align: center;
 
-  // Sutil toque de diseño en el fondo
-  &::before {
-    content: '';
+  // Cargamos la fachada optimizada como fondo principal
+background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
+  background-size: cover;
+
+  // El overlay oscuro integrado con degradado para asegurar legibilidad
+  .hero-overlay {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255, 51, 51, 0.15) 0%, transparent 70%);
-    top: 20%;
-    right: -10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; // Flota por encima del overlay
     max-width: 800px;
     padding: 2rem;
   }
 
   .hero-badge {
-    background-color: rgba(255, 204, 0, 0.1);
-    color: #ffcc00;
-    padding: 0.5rem 1.2rem;
+    background: #ffcc00; // El amarillo icónico HYPE con presencia real
+    color: #121212;
+    padding: 0.6rem 1.4rem;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     display: inline-block;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 204, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3); // Brillo urbano sutil
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 900;
     color: #fff;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: -1px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); // Resalte pro sobre las luces de la foto
 
     span {
-      color: #ff3333; // Rojo fuego
-      display: block; // Hace que baje para mayor impacto visual
+      color: #ffcc00; // Amarillo HYPE acoplado a la marca
+      display: block; // Mantiene el quiebre de línea para mayor impacto
     }
   }
 
   .hero-subtitle {
-    font-size: 1.15rem;
-    color: #cccccc;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-
-    a {
-      text-decoration: none;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary {
-      background-color: #ffcc00;
-      color: #121212;
-      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
-
-      &:hover {
-        background-color: #e6b800;
-        transform: translateY(-3px);
-      }
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-        border-color: #fff;
-        transform: translateY(-3px);
-      }
-    }
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   }
 }
 
-// Ajuste responsivo para pantallas medianas o chicas
+// Ajuste responsivo fino para pantallas medianas o celulares
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 75vh;
+    background-position: 68% center; // Mueve tantito el encuadre para que luzca el letrero HYPE en celular
     
     .hero-title {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
     }
     
     .hero-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-buttons {
-      flex-direction: column;
-      gap: 1rem;
-      padding: 0 2rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
     }
   }
 }
