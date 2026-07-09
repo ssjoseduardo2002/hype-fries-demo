@@ -36,9 +36,7 @@
   .navbar-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
+    gap: 3rem;
 
     .nav-link {
       color: #b3b3b3;
@@ -109,5 +107,17 @@
     .navbar-menu {
       display: none; 
     }
+  }
+}
+// ... (tu código actual)
+
+// Nueva regla para el estado "scrolled"
+.navbar.scrolled {
+  background-color: rgba(18, 18, 18, 0.98); // Un toque más sólido al bajar
+  padding: 0.5rem 0; // Se hace un poco más delgado al hacer scroll para ganar espacio
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); // Sombra más pronunciada
+  
+  .navbar-container {
+    padding: 0.5rem 2rem; // Ajuste de padding para suavizar el cambio
   }
 }
