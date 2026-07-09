@@ -1,41 +1,33 @@
 .hero-section {
   position: relative;
-  height: 100vh; // Cambiado a pantalla completa para el impacto visual
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
-
-  // Cargamos la fachada optimizada como fondo principal
-background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
+  background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
   background-size: cover;
 
-  // El overlay oscuro integrado con degradado para asegurar legibilidad
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.55) 60%,
-      rgba(0, 0, 0, 0.4) 100%
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.4) 100%);
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
-    z-index: 2; // Flota por encima del overlay
+    z-index: 2;
     max-width: 800px;
     padding: 2rem;
   }
 
   .hero-badge {
-    background: #ffcc00; // El amarillo icónico HYPE con presencia real
+    background: #ffcc00;
     color: #121212;
     padding: 0.6rem 1.4rem;
     border-radius: 50px;
@@ -45,7 +37,7 @@ background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center cent
     letter-spacing: 1.5px;
     display: inline-block;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3); // Brillo urbano sutil
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
   }
 
   .hero-title {
@@ -56,11 +48,11 @@ background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center cent
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: -1px;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); // Resalte pro sobre las luces de la foto
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 
     span {
-      color: #ffcc00; // Amarillo HYPE acoplado a la marca
-      display: block; // Mantiene el quiebre de línea para mayor impacto
+      color: #ffcc00;
+      display: block;
     }
   }
 
@@ -69,24 +61,35 @@ background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center cent
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
     max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 2rem auto; // Margen inferior para separar del botón
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  // Estilo del botón de acción (Call to Action)
+  .btn-main {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #ffcc00;
+      color: #121212;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
+    }
   }
 }
 
-// Ajuste responsivo fino para pantallas medianas o celulares
 @media (max-width: 768px) {
   .hero-section {
-    background-position: 68% center; // Mueve tantito el encuadre para que luzca el letrero HYPE en celular
-    
-    .hero-title {
-      font-size: 2.4rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
+    background-position: 68% center;
+    .hero-title { font-size: 2.4rem; }
+    .hero-subtitle { font-size: 1.05rem; }
   }
 }
