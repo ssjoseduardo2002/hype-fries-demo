@@ -3,10 +3,10 @@
   
   <div class="menu-grid">
     <div class="category-card" *ngFor="let cat of categorias">
-      <img [src]="cat.imagen" [alt]="cat.titulo">
-      <div class="card-overlay">
-        <h3>{{ cat.titulo }}</h3>
-      </div>
-    </div>
+  <img [src]="cat.imagen" [alt]="cat.titulo" loading="lazy">
+  <div class="card-overlay">
+    <h3>{{ cat.titulo }}</h3>
+  </div>
+</div>
   </div>
 </section>
