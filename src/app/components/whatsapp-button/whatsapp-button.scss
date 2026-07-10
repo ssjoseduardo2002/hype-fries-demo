@@ -1,0 +1,39 @@
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  // Usamos el rojo fuego de HYPE
+  background-color: #25d366; // Color estándar de WhatsApp
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+
+  img { 
+    width: 35px; 
+    height: 35px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.15) rotate(10deg);
+    background-color: #128c7e; // Verde más oscuro al hacer hover
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  }
+}
+
+// Aseguramos que en móviles sea fácil de tocar
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+}
