@@ -11,10 +11,10 @@ import { Categoria } from './menu.model';
 })
 export class MenuComponent {
   categorias: Categoria[] = [
-    { titulo: 'Hamburguesas', imagen: 'assets/images/gallery/smash.jpg' },
-    { titulo: 'Papas a la francesa', imagen: 'assets/images/gallery/papas-clasicas.jpg' },
-    { titulo: 'Boneless', imagen: 'assets/images/gallery/BBQ.jpg' },
-    { titulo: 'Malteadas', imagen: 'assets/images/gallery/para-limonada-rosa.jpg' }, // O la que prefieras
-    { titulo: 'Combos Hype', imagen: 'assets/images/gallery/HYPE.jpg' }
+    { titulo: 'Hamburguesas', imagen: 'assets/images/gallery/clasica.jpg' },
+    { titulo: 'Papas a la francesa', imagen: 'assets/images/gallery/9.jpg' },
+    { titulo: 'Boneless', imagen: 'assets/images/gallery/30.jpg' },
+    { titulo: 'Malteadas y limonada rosa', imagen: 'assets/images/gallery/44.jpg' }, // O la que prefieras
+    { titulo: 'Combos Hype', imagen: 'assets/images/gallery/31.jpg' }
   ];
 }
