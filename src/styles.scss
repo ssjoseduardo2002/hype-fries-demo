@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables de diseño HYPE */
+:root {
+  --color-primary: #ffcc00;    /* Amarillo Hype */
+  --color-secondary: #ff3333;  /* Rojo Fuego */
+  --color-dark: #0a0a0a;       /* Fondo Premium */
+  --color-text: #ffffff;
+  --color-gray: #8c8c8c;
+  --font-display: 'Bangers', cursive;
+  --font-main: 'Arial', sans-serif;
+}
+
+/* Aplicación global */
+body {
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-main);
+}

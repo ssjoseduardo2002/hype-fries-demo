@@ -6,7 +6,7 @@
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  background: url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
   background-size: cover;
 
   .hero-overlay {
@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(to top, var(--color-dark) 0%, transparent 100%);
     z-index: 1;
   }
 
@@ -27,61 +27,67 @@
   }
 
   .hero-badge {
-    background: #ffcc00;
-    color: #121212;
+    background: var(--color-primary);
+    color: var(--color-dark);
     padding: 0.6rem 1.4rem;
     border-radius: 50px;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     display: inline-block;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+    font-family: var(--font-display);
   }
 
   .hero-title {
-    font-size: 3.8rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    color: #fff;
-    line-height: 1.15;
+    color: var(--color-text);
+    line-height: 1;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: -1px;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    font-family: var(--font-display);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
     span {
-      color: #ffcc00;
+      color: var(--color-primary);
       display: block;
+      font-size: 5.5rem; // Un poco más grande para impacto
+      margin-top: 0.5rem;
     }
   }
 
   .hero-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    color: #e0e0e0;
     line-height: 1.6;
     max-width: 650px;
-    margin: 0 auto 2rem auto; // Margen inferior para separar del botón
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 0 auto 2.5rem auto;
   }
 
-  // Estilo del botón de acción (Call to Action)
+  // Botón mejorado con las nuevas variables
   .btn-main {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 1.2rem 3rem;
     background-color: transparent;
-    border: 2px solid #ffcc00;
-    color: #ffcc00;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 900;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
     border-radius: 50px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     
     &:hover {
-      background-color: #ffcc00;
-      color: #121212;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
+      background-color: var(--color-primary);
+      color: var(--color-dark);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 204, 0, 0.4);
     }
   }
 }
@@ -89,7 +95,10 @@
 @media (max-width: 768px) {
   .hero-section {
     background-position: 68% center;
-    .hero-title { font-size: 2.4rem; }
-    .hero-subtitle { font-size: 1.05rem; }
+    .hero-title { 
+      font-size: 2.8rem; 
+      span { font-size: 3.5rem; }
+    }
+    .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
   }
 }
