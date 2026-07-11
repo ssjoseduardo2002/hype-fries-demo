@@ -11,9 +11,9 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    // CAMBIO: Ahora usamos 2 columnas porque ya no está el mapa
+    // 2 columnas para equilibrar Brand e Info
     grid-template-columns: 1fr 1fr;
-    gap: 4rem; // Más espacio para que no se vea amontonado
+    gap: 4rem;
     margin-bottom: 3rem;
     align-items: start;
   }
@@ -29,12 +29,10 @@
     }
 
     .brand-mission {
-      // CAMBIO: Color blanco para el texto que estaba en rojo
       color: #fff; 
       font-size: 1.1rem;
       font-style: italic;
       span {
-        // CAMBIO: Mantenemos el blanco aquí también para que se vea uniforme
         color: #fff; 
         font-weight: 900;
         font-style: normal;
@@ -48,16 +46,9 @@
       font-weight: 700;
       margin-bottom: 1.2rem;
       text-transform: uppercase;
-      // CAMBIO: Color blanco para el título
       color: #fff; 
     }
-    // CAMBIO: Color blanco para toda la información
     p { color: #fff; font-size: 0.95rem; margin: 0.5rem 0; }
-  }
-
-  // Clase eliminada o comentada al no usarse el mapa
-  .footer-map {
-    display: none;
   }
 
   .btn-maps {
@@ -73,34 +64,62 @@
     &:hover { transform: scale(1.05); }
   }
 
+  // Estilos del Footer Inferior con la nueva sección del desarrollador
   .footer-bottom {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 1.5rem;
 
-    p { color: #666; font-size: 0.85rem; margin: 0 0 0.5rem 0; }
+    p { color: #666; font-size: 0.85rem; margin: 0 0 1rem 0; }
 
-    .developer-credit {
-      color: #a6a6a6;
-      font-size: 0.95rem;
-      span {
-        display: block;
-        margin-top: 0.6rem;
-        color: var(--color-primary);
-        font-family: 'Bangers', sans-serif;
-        font-size: 1.8rem;
-        letter-spacing: 2px;
+    .developer-profile {
+      display: flex;
+      justify-content: center;
+      
+      .dev-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        transition: opacity 0.3s;
+
+        &:hover { opacity: 0.8; }
+
+        .dev-photo {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid var(--color-primary);
+        }
+
+        .dev-info {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+
+          .dev-role {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+          }
+          .dev-handle {
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            font-weight: bold;
+          }
+        }
       }
     }
   }
 }
 
-// Ajuste responsivo para celulares
+// Ajuste responsivo
 @media (max-width: 768px) {
   .footer-section {
     padding: 3rem 1rem 1rem;
     .footer-container {
-      grid-template-columns: 1fr; // Todo a una columna en móvil
+      grid-template-columns: 1fr;
       text-align: center;
       gap: 2rem;
     }
