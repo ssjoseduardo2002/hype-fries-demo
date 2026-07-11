@@ -27,12 +27,18 @@
           @if (productosFiltrados.length > 0) {
             @for (item of productosFiltrados; track item.id) {
               <div class="product-item">
+                <!-- Se agregó la lógica para mostrar la imagen si existe -->
+                @if (item.imagen) {
+                  <img [src]="item.imagen" [alt]="item.nombre" class="product-img" loading="lazy">
+                }
+                
                 <div class="product-info">
                   <h4>{{ item.nombre }}</h4>
                   <p>{{ item.descripcion }}</p>
                 </div>
+                
                 <div class="product-price">
-                  <span>${{ item.precio }}</span>
+                  <span>${{ item.precio | number:'1.2-2' }}</span>
                 </div>
               </div>
             }
