@@ -1,5 +1,13 @@
 export interface Categoria {
-  id: number;      // Agregado para el tracking del @for
+  id: number;
   titulo: string;
-  imagen: string;  // La ruta es 'assets/images/gallery/nombre.jpg'
+  imagen: string;
+}
+
+export interface Platillo {
+  id: number;
+  categoriaId: number; // Esto debe coincidir con el 'id' de la Categoria
+  nombre: string;
+  descripcion: string;
+  precio: number;
 }

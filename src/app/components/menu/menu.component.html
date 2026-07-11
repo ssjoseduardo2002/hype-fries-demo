@@ -7,17 +7,40 @@
     
     <div class="menu-grid">
       @for (cat of categorias; track cat.id) {
-        <div class="category-card">
+        <div class="category-card" (click)="seleccionarCategoria(cat)">
           <div class="image-wrapper">
             <img [src]="cat.imagen" [alt]="cat.titulo" loading="lazy">
           </div>
           <div class="card-overlay">
             <h3>{{ cat.titulo }}</h3>
-            <!-- Agregué este pequeño detalle para invitar al usuario a ver más -->
-            <span class="view-more">ver variedad</span>
+            <span class="view-more">Ver variedad</span>
           </div>
         </div>
       }
     </div>
+
+    @if (categoriaSeleccionada) {
+      <div class="products-section" id="productos">
+        <h3 class="selected-category-title">{{ categoriaSeleccionada.titulo }}</h3>
+        
+        <div class="products-list">
+          @if (productosFiltrados.length > 0) {
+            @for (item of productosFiltrados; track item.id) {
+              <div class="product-item">
+                <div class="product-info">
+                  <h4>{{ item.nombre }}</h4>
+                  <p>{{ item.descripcion }}</p>
+                </div>
+                <div class="product-price">
+                  <span>${{ item.precio }}</span>
+                </div>
+              </div>
+            }
+          } @else {
+            <p class="no-products">Próximamente tendremos más opciones en esta categoría.</p>
+          }
+        </div>
+      </div>
+    }
   </div>
 </section>
