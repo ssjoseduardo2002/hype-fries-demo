@@ -1,7 +1,22 @@
 <nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
   <div class="navbar-container">
-    <a href="#" class="navbar-logo">
+    <!-- Logo principal que nos lleva al Hero -->
+    <a href="#hero" class="navbar-logo">
       HYPE<span>FRIES</span>
     </a>
+    
+    <!-- Menú de navegación con las clases correctas para el CSS -->
+    <ul class="navbar-menu">
+      <li><a href="#hero" class="nav-link">Inicio</a></li>
+      <li><a href="#menu" class="nav-link">Menú</a></li>
+      <li><a href="#social" class="nav-link">Nosotros</a></li>
+      <li><a href="#galeria" class="nav-link">Galería</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+
+    <!-- Botón de acción (opcional, pero se ve súper pro) -->
+    <div class="navbar-actions">
+      <a href="#contacto" class="btn-order">¡Pide Ahora!</a>
+    </div>
   </div>
 </nav>

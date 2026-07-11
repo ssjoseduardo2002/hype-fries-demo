@@ -4,21 +4,21 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(18, 18, 18, 0.95); // Fondo oscuro semi-transparente
-  backdrop-filter: blur(10px); // Efecto esmerilado moderno
-  -webkit-backdrop-filter: blur(10px); // Soporte para Safari
+  background-color: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 
   .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 2rem; // Un poquito más de aire
-  display: flex;
-  justify-content: center; // ¡Logo al centro si es minimalista!
-  align-items: center;
-}
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between; // Cambiado para separar logo de menú
+    align-items: center;
+  }
 
   .navbar-logo {
     font-size: 1.5rem;
@@ -29,7 +29,7 @@
     text-transform: uppercase;
 
     span {
-      color: #ffcc00; // Amarillo Hype
+      color: var(--color-primary); // Usando tu variable global
     }
   }
 
@@ -39,7 +39,7 @@
     gap: 3rem;
 
     .nav-link {
-      color: #b3b3b3;
+      color: var(--color-gray);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
@@ -47,10 +47,9 @@
       position: relative;
 
       &:hover, &.active {
-        color: #ffcc00;
+        color: var(--color-primary);
       }
 
-      // Sutil línea estética inferior animada para indicar sección activa
       &::after {
         content: '';
         position: absolute;
@@ -58,7 +57,7 @@
         height: 2px;
         bottom: -4px;
         left: 0;
-        background-color: #ffcc00;
+        background-color: var(--color-primary);
         transition: width 0.2s ease;
       }
 
@@ -68,56 +67,44 @@
     }
   }
 
-  // Corregido el anidamiento para que coincida exactamente con tu HTML
   .navbar-actions {
     display: flex;
     align-items: center;
 
     .btn-order {
-      background-color: #ff3333; // Rojo antojo
+      background-color: var(--color-secondary);
       color: #fff;
       text-decoration: none;
       padding: 0.6rem 1.2rem;
       border-radius: 50px;
       font-weight: 700;
       font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
       transition: transform 0.2s ease, background-color 0.3s ease;
-      display: inline-block;
 
       &:hover {
-        background-color: #e02e2e;
         transform: translateY(-2px);
       }
-
-      &:active {
-        transform: translateY(0);
-      }
     }
   }
 }
 
-// Ajuste responsivo para celulares (oculta el menú plano para evitar desbordes)
-@media (max-width: 768px) {
-  .navbar {
-    .navbar-container {
-      padding: 1rem;
-    }
-
-    .navbar-menu {
-      display: none; 
-    }
-  }
-}
-// ... (tu código actual)
-
-// Nueva regla para el estado "scrolled"
+// Estado Scrolled (compacto)
 .navbar.scrolled {
-  background-color: rgba(18, 18, 18, 0.98); // Un toque más sólido al bajar
-  padding: 0.5rem 0; // Se hace un poco más delgado al hacer scroll para ganar espacio
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); // Sombra más pronunciada
+  background-color: rgba(18, 18, 18, 0.98);
+  padding: 0.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
   
   .navbar-container {
-    padding: 0.5rem 2rem; // Ajuste de padding para suavizar el cambio
+    padding: 0.5rem 2rem;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .navbar .navbar-container {
+    justify-content: center;
+  }
+  .navbar .navbar-menu {
+    display: none; // Menú hamburguesa vendrá después, por ahora minimalista
   }
 }

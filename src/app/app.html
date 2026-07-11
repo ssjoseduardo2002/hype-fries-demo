@@ -1,8 +1,33 @@
+<!-- Navbar siempre visible al inicio -->
 <app-navbar></app-navbar>
-<app-hero></app-hero>
-<app-menu></app-menu>
-<app-social-matrics></app-social-matrics>
-<app-instagram-gallery></app-instagram-gallery>
-<app-footer></app-footer>
 
+<!-- Sección Hero: El primer impacto -->
+<section id="hero">
+  <app-hero></app-hero>
+</section>
+
+<!-- Sección Menú: El corazón de HYPE -->
+<section id="menu">
+  <app-menu></app-menu>
+</section>
+
+<!-- Sección Social: Estadísticas o métricas de comunidad -->
+<section id="social">
+  <app-social-matrics></app-social-matrics>
+</section>
+
+<!-- Sección Galería: El toque visual de Instagram -->
+<section id="galeria">
+  <app-instagram-gallery></app-instagram-gallery>
+</section>
+
+<!-- Sección Footer: Contacto y ubicación -->
+<footer id="contacto">
+  <app-footer></app-footer>
+</footer>
+
+<!-- Botón flotante siempre presente -->
+<app-whatsapp-button></app-whatsapp-button>
+
+<!-- Router Outlet para navegación interna si la necesitas después -->
 <router-outlet></router-outlet>
