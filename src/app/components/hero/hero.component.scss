@@ -68,6 +68,7 @@
 // Ajustes para móviles
 @media (max-width: 768px) {
   .hero-section {
-    height: 50vh; // Un poco más pequeño en móvil para que no sobre tanto espacio
+    height: 50vh; // Ajuste para que se vea bien en celular
+    background-size: cover; // O 'contain' si prefieres que se vea el logo completo
   }
 }
