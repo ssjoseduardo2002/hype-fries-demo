@@ -1,33 +1,31 @@
-// Colores base de la marca (ajústalos si usas variables globales)
+// Colores base de la marca
 $black-hype: #0a0a0a;
-$yellow-hype: #ffcc00; // El tono perrón que uses para HYPE
+$yellow-hype: #ffcc00; 
 $white: #ffffff;
 
 .instagram-section {
   padding: 60px 20px;
   background-color: $black-hype;
   color: $white;
-  font-family: 'Arial', sans-serif; // O la fuente principal de tu proyecto
 
   .section-header {
     text-align: center;
     margin-bottom: 40px;
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 900;
       letter-spacing: 2px;
       margin-bottom: 8px;
       color: $white;
       
-      // Detalle de línea decorativa abajo del título
       &::after {
         content: '';
         display: block;
         width: 60px;
         height: 4px;
         background-color: $yellow-hype;
-        margin: 10px auto 0 auto;
+        margin: 15px auto 0 auto;
         border-radius: 2px;
       }
     }
@@ -41,32 +39,38 @@ $white: #ffffff;
 
   .gallery-grid {
     display: grid;
-    // Configuración responsiva: 1 col en móvil, 2 en tablets, 3 en pantallas grandes
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
 
   .gallery-item {
-    text-decoration: none;
-    display: block;
+    position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     background-color: #141414;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
 
     &:hover {
-      transform: translateY(-5px); // Efecto sutil de levantamiento
+      transform: translateY(-8px);
+
+      .gallery-img {
+        transform: scale(1.1);
+      }
+
+      .overlay {
+        opacity: 1;
+      }
     }
   }
 
   .image-wrapper {
     position: relative;
     width: 100%;
-    // Mantiene las fotos perfectamente cuadradas (1:1) tipo Instagram
-    padding-top: 100%; 
+    padding-top: 100%; // Aspect Ratio 1:1
     overflow: hidden;
 
     .gallery-img {
@@ -75,18 +79,17 @@ $white: #ffffff;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; // Evita que la hamburguesa se deforme
-      transition: transform 0.5s ease;
+      object-fit: cover;
+      transition: transform 0.6s ease;
     }
 
-    // Capa oscura que aparece al pasar el cursor
     .overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); // Oscurece el fondo
+      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -94,40 +97,40 @@ $white: #ffffff;
       opacity: 0;
       color: $white;
       z-index: 2;
-      backdrop-filter: blur(4px); // Esto hará que parezca un cristal ahumado, ¡se ve súper pro!
-      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-backdrop-filter: blur(4px); // Soporte extra para navegadores Safari/iOS
-      will-change: backdrop-filter; // Le dice al navegador que se prepare para animar esto
-    
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      transition: opacity 0.4s ease;
+
+      .overlay-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
       .instagram-icon {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 2.5rem;
         animation: bounce 2s infinite alternate;
       }
 
       span {
-        font-size: 0.9rem;
-        font-weight: bold;
+        font-size: 1rem;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        color: $yellow-hype; // Resalta el texto con el color de la marca
-      }
-    }
-
-    // Cuando el usuario pasa el mouse, la imagen hace zoom y sale el overlay
-    &:hover {
-      .gallery-img {
-        transform: scale(1.08); // Zoom sutil a la foto
-      }
-      .overlay {
-        opacity: 1;
+        letter-spacing: 1.5px;
+        color: $yellow-hype;
       }
     }
   }
 }
 
-// Animación simple para el icono interno por si quieres que tenga "flow"
 @keyframes bounce {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
+  100% { transform: translateY(-8px); }
+}
+
+// Responsive ajustes
+@media (max-width: 768px) {
+  .instagram-section { padding: 40px 15px; }
+  .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 }

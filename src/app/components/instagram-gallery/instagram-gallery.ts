@@ -11,11 +11,11 @@ import { CommonModule } from '@angular/common'; // Asegúrate de tenerlo si es u
 export class InstagramGalleryComponent {
   // Arreglo con la información de los posts de HYPE FRIES
 instagramPosts = [
-  { id: 1, image: 'assets/images/gallery/1.jpg', link: 'https://www.instagram.com/p/DZfzdrwD3vF/?img_index=3' },
-  { id: 2, image: 'assets/images/gallery/2.jpg', link: 'https://www.instagram.com/p/DZfzdrwD3vF/?img_index=4' },
-  { id: 3, image: 'assets/images/gallery/3.jpg', link: 'https://www.instagram.com/p/DZfzdrwD3vF/?img_index=5' },
-  { id: 4, image: 'assets/images/gallery/4.jpg', link: 'https://www.instagram.com/p/DZfzdrwD3vF/?img_index=2' },
-  { id: 5, image: 'assets/images/gallery/5.jpg', link: 'https://www.instagram.com/p/DZfzdrwD3vF/?img_index=1' },
-  { id: 6, image: 'assets/images/gallery/6.jpg', link: 'https://www.instagram.com/p/DXz_nUwmyBj/?img_index=5' }
+  { id: 1, image: 'assets/images/gallery/41.jpg'},
+  { id: 2, image: 'assets/images/gallery/16.jpg'},
+  { id: 3, image: 'assets/images/gallery/15.jpg'},
+  { id: 4, image: 'assets/images/gallery/10.jpg'},
+  { id: 5, image: 'assets/images/gallery/7.jpg'},
+  { id: 6, image: 'assets/images/gallery/papas clasicas.jpg'}
 ];
 }

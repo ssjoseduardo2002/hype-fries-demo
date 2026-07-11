@@ -1,21 +1,25 @@
-<section class="instagram-section">
+<section id="galeria" class="instagram-section">
   <div class="section-header">
+    <span class="subtitle">Si el amor nace a primera vista, ven y enamórate de HYPE</span>
     <h2>GALERÍA HYPE</h2>
-    <p>@hype.fries</p>
   </div>
 
   <div class="gallery-grid">
     @for (post of instagramPosts; track post.id) {
-      <a [href]="post.link" target="_blank" rel="noopener noreferrer" class="gallery-item">
+      <!-- Cambiamos <a> por <div> ya que solo es visual -->
+      <div class="gallery-item">
         <div class="image-wrapper">
           <img [src]="post.image" alt="Hype Fries Post" class="gallery-img" loading="lazy">
+          
+          <!-- Overlay que ahora solo funciona como detalle visual/decorativo -->
           <div class="overlay">
-            <i class="instagram-icon">📸</i> <!-- O el icono que uses de FontAwesome/Lucide -->
-            <span>Apóyanos con tu like</span>
-            <span>y compartiendo en tus redes sociales</span>
+            <div class="overlay-content">
+              <i class="instagram-icon">📸</i>
+              <span class="action-text">DÉJANOS TU LIKE Y UN COMENTARIO BONITO</span>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     }
   </div>
 </section>
