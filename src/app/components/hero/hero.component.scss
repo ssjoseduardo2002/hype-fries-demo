@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  // CAMBIO 1: Reducimos altura de 100vh a 70vh para que se vea la fachada sin estirarse
+  // Mantenemos la altura, pero ahora la imagen se adaptará mejor
   height: 70vh; 
   display: flex;
   align-items: center;
@@ -8,11 +8,12 @@
   overflow: hidden;
   text-align: center;
   
-  // CAMBIO 2: background-size a 'cover' con mejor posición, 
-  // pero manteniéndolo centrado para que sea equilibrado.
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
-  background-size: cover; 
+  // AJUSTE CLAVE: Cambiamos 'cover' por 'contain'
+  // 'contain' garantiza que toda la imagen (incluido el círculo) se vea.
+  // Añadimos 'background-color' para que el fondo sea negro sólido en los bordes.
+  background: url('../../../assets/images/hero/HYPE.jpg') no-repeat center center;
+  background-size: contain; 
+  background-color: #000; // Asegura que el fondo sea negro donde no llegue la imagen
 
   .hero-overlay {
     position: absolute;
@@ -20,80 +21,46 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, var(--color-dark) 0%, transparent 60%);
+    // Reducimos la opacidad un poco más para que el logo se vea brillante
+    background: rgba(0, 0, 0, 0.2); 
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
     padding: 1.5rem;
-    // CAMBIO 3: Evitamos que el contenido toque los bordes laterales
     margin: 0 auto;
   }
 
-  .hero-badge {
-    background: var(--color-primary);
-    color: var(--color-dark);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.75rem; // Un poco más discreto
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
-    font-family: var(--font-display);
+  // Mantenemos ocultos los textos como querías
+  .hero-badge, .hero-title, .hero-subtitle {
+    display: none;
   }
 
-  .hero-title {
-    // CAMBIO 4: Reducimos un poco el tamaño para que el texto no sea dominante
-    font-size: 3.5rem; 
-    font-weight: 900;
-    color: var(--color-text);
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-family: var(--font-display);
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-
-    span {
-      color: var(--color-primary);
-      display: block;
-      font-size: 4rem; // Balanceado con el título
-      margin-top: 0.2rem;
-    }
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    color: #e0e0e0;
-    line-height: 1.5;
-    max-width: 600px; // Más estrecho para que la lectura sea cómoda
-    margin: 0 auto 2rem auto;
-  }
-
-  .btn-main {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 900;
-    font-family: var(--font-display);
-    font-size: 1rem;
-    border-radius: 50px;
-    transition: all 0.4s ease;
-    text-transform: uppercase;
+  .hero-cta {
+    margin-top: 1rem;
     
-    &:hover {
-      background-color: var(--color-primary);
-      color: var(--color-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
+    .btn-main {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: transparent;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 900;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
+      }
     }
   }
 }
@@ -101,11 +68,6 @@
 // Ajustes para móviles
 @media (max-width: 768px) {
   .hero-section {
-    height: 60vh; // Aún más compacto en celular
-    .hero-title { 
-      font-size: 2.2rem; 
-      span { font-size: 2.8rem; }
-    }
-    .hero-subtitle { font-size: 0.9rem; }
+    height: 50vh; // Un poco más pequeño en móvil para que no sobre tanto espacio
   }
 }
