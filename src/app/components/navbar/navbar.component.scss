@@ -4,24 +4,25 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(18, 18, 18, 0.95);
+  // CAMBIO: Fondo ligeramente más transparente para integrar con la fachada
+  background-color: rgba(18, 18, 18, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 
   .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 2rem;
+    // CAMBIO: Padding reducido de 1.5rem a 0.8rem para hacerla delgada
+    padding: 0.8rem 2rem; 
     display: flex;
-    justify-content: space-between; // Cambiado para separar logo de menú
+    justify-content: space-between;
     align-items: center;
   }
 
   .navbar-logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem; // Ligeramente más pequeño para no robar atención
     font-weight: 900;
     color: #fff;
     text-decoration: none;
@@ -29,20 +30,20 @@
     text-transform: uppercase;
 
     span {
-      color: var(--color-primary); // Usando tu variable global
+      color: var(--color-primary);
     }
   }
 
   .navbar-menu {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 2rem; // CAMBIO: Un poco menos de espacio para que quepa todo bien
 
     .nav-link {
-      color: var(--color-gray);
+      color: #fff; // Un color más sólido destaca mejor
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: color 0.3s ease;
       position: relative;
 
@@ -55,7 +56,7 @@
         position: absolute;
         width: 0;
         height: 2px;
-        bottom: -4px;
+        bottom: -6px; // Ajustado
         left: 0;
         background-color: var(--color-primary);
         transition: width 0.2s ease;
@@ -75,36 +76,35 @@
       background-color: var(--color-secondary);
       color: #fff;
       text-decoration: none;
-      padding: 0.6rem 1.2rem;
+      // CAMBIO: Botón más compacto y elegante
+      padding: 0.4rem 1rem;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background-color 0.3s ease;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
 
       &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-dark);
         transform: translateY(-2px);
       }
     }
   }
 }
 
-// Estado Scrolled (compacto)
+// Estado Scrolled (mantenemos igual o más limpio)
 .navbar.scrolled {
   background-color: rgba(18, 18, 18, 0.98);
-  padding: 0.5rem 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-  
-  .navbar-container {
-    padding: 0.5rem 2rem;
-  }
+  padding: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 // Responsive
 @media (max-width: 768px) {
   .navbar .navbar-container {
-    justify-content: center;
+    padding: 0.7rem 1rem;
   }
   .navbar .navbar-menu {
-    display: none; // Menú hamburguesa vendrá después, por ahora minimalista
+    display: none;
   }
 }
