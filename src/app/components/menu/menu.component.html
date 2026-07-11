@@ -1,7 +1,6 @@
 <section id="menu" class="menu-section">
   <div class="container">
     <div class="menu-header">
-      <span class="subtitle">Nuestra propuesta</span>
       <h2 class="section-title">En HYPE FRIES te ofrecemos:</h2>
     </div>
     
@@ -27,7 +26,6 @@
           @if (productosFiltrados.length > 0) {
             @for (item of productosFiltrados; track item.id) {
               <div class="product-item">
-                <!-- Se agregó la lógica para mostrar la imagen si existe -->
                 @if (item.imagen) {
                   <img [src]="item.imagen" [alt]="item.nombre" class="product-img" loading="lazy">
                 }
@@ -45,6 +43,12 @@
           } @else {
             <p class="no-products">Próximamente tendremos más opciones en esta categoría.</p>
           }
+        </div>
+
+        <div class="didi-cta-container">
+          <a href="https://web.didiglobal.com/mx/food/durango-dur/the-hype-fries-sucparque/5764607748592109135/" target="_blank" class="btn-didi">
+            Pídelo en Didi Food
+          </a>
         </div>
       </div>
     }
