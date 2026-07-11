@@ -13,7 +13,7 @@
     margin-bottom: 4rem;
 
     .social-subtitle {
-      color: #ff3333; // Rojo fuego
+      color: var(--color-secondary); // Rojo fuego
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -50,19 +50,14 @@
     padding: 2.5rem 2rem;
     transition: transform 0.3s ease;
 
-    &:hover {
-      transform: translateY(-5px);
-    }
+    &:hover { transform: translateY(-5px); }
 
-    .metric-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+    .metric-icon { font-size: 2rem; margin-bottom: 1rem; }
 
     .metric-number {
       font-size: 3rem;
       font-weight: 900;
-      color: #ffcc00; // Amarillo brillante
+      color: var(--color-primary); // Amarillo brillante
       margin: 0;
       letter-spacing: -1px;
     }
@@ -75,21 +70,44 @@
     }
   }
 
-  .btn-instagram {
-    display: inline-block;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); // Degradado oficial Instagram
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 4px 20px rgba(220, 39, 67, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  // Contenedor de botones actualizado
+  .social-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(220, 39, 67, 0.5);
+    a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover { transform: translateY(-2px); }
+    }
+
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    }
+
+    .btn-facebook {
+      background-color: #4267b2;
+      box-shadow: 0 4px 15px rgba(66, 103, 178, 0.3);
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
   }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .social-section { padding: 3rem 1rem; }
 }
