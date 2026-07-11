@@ -1,13 +1,18 @@
 .hero-section {
   position: relative;
-  height: 100vh;
+  // CAMBIO 1: Reducimos altura de 100vh a 70vh para que se vea la fachada sin estirarse
+  height: 70vh; 
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
-  background-size: cover;
+  
+  // CAMBIO 2: background-size a 'cover' con mejor posición, 
+  // pero manteniéndolo centrado para que sea equilibrado.
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../../../assets/images/hero/Fachada.jpg') no-repeat center center;
+  background-size: cover; 
 
   .hero-overlay {
     position: absolute;
@@ -15,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, var(--color-dark) 0%, transparent 100%);
+    background: linear-gradient(to top, var(--color-dark) 0%, transparent 60%);
     z-index: 1;
   }
 
@@ -23,82 +28,84 @@
     position: relative;
     z-index: 2;
     max-width: 800px;
-    padding: 2rem;
+    padding: 1.5rem;
+    // CAMBIO 3: Evitamos que el contenido toque los bordes laterales
+    margin: 0 auto;
   }
 
   .hero-badge {
     background: var(--color-primary);
     color: var(--color-dark);
-    padding: 0.6rem 1.4rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 0.75rem; // Un poco más discreto
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
     font-family: var(--font-display);
   }
 
   .hero-title {
-    font-size: 4.5rem;
+    // CAMBIO 4: Reducimos un poco el tamaño para que el texto no sea dominante
+    font-size: 3.5rem; 
     font-weight: 900;
     color: var(--color-text);
-    line-height: 1;
-    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     font-family: var(--font-display);
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 
     span {
       color: var(--color-primary);
       display: block;
-      font-size: 5.5rem; // Un poco más grande para impacto
-      margin-top: 0.5rem;
+      font-size: 4rem; // Balanceado con el título
+      margin-top: 0.2rem;
     }
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #e0e0e0;
-    line-height: 1.6;
-    max-width: 650px;
-    margin: 0 auto 2.5rem auto;
+    line-height: 1.5;
+    max-width: 600px; // Más estrecho para que la lectura sea cómoda
+    margin: 0 auto 2rem auto;
   }
 
-  // Botón mejorado con las nuevas variables
   .btn-main {
     display: inline-block;
-    padding: 1.2rem 3rem;
+    padding: 1rem 2.5rem;
     background-color: transparent;
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 900;
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 50px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
     
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-dark);
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255, 204, 0, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
     }
   }
 }
 
+// Ajustes para móviles
 @media (max-width: 768px) {
   .hero-section {
-    background-position: 68% center;
+    height: 60vh; // Aún más compacto en celular
     .hero-title { 
-      font-size: 2.8rem; 
-      span { font-size: 3.5rem; }
+      font-size: 2.2rem; 
+      span { font-size: 2.8rem; }
     }
-    .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
+    .hero-subtitle { font-size: 0.9rem; }
   }
 }
