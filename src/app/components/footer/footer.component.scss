@@ -11,9 +11,9 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    // Ahora usamos 3 columnas para equilibrar Brand, Info y Mapa
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    // CAMBIO: Ahora usamos 2 columnas porque ya no está el mapa
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; // Más espacio para que no se vea amontonado
     margin-bottom: 3rem;
     align-items: start;
   }
@@ -29,11 +29,13 @@
     }
 
     .brand-mission {
-      color: var(--color-gray);
+      // CAMBIO: Color blanco para el texto que estaba en rojo
+      color: #fff; 
       font-size: 1.1rem;
       font-style: italic;
       span {
-        color: var(--color-secondary);
+        // CAMBIO: Mantenemos el blanco aquí también para que se vea uniforme
+        color: #fff; 
         font-weight: 900;
         font-style: normal;
       }
@@ -46,14 +48,16 @@
       font-weight: 700;
       margin-bottom: 1.2rem;
       text-transform: uppercase;
-      color: var(--color-secondary);
+      // CAMBIO: Color blanco para el título
+      color: #fff; 
     }
-    p { color: #b3b3b3; font-size: 0.95rem; margin: 0.5rem 0; }
+    // CAMBIO: Color blanco para toda la información
+    p { color: #fff; font-size: 0.95rem; margin: 0.5rem 0; }
   }
 
+  // Clase eliminada o comentada al no usarse el mapa
   .footer-map {
-    width: 100%;
-    iframe { border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    display: none;
   }
 
   .btn-maps {
