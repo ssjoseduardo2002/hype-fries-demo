@@ -1,66 +1,94 @@
 .menu-section {
-  padding: 4rem 2rem;
+  padding: 80px 20px;
   background-color: var(--color-dark);
 
-  .section-title { 
-    text-align: center; 
-    color: var(--color-primary); 
-    margin-bottom: 3rem; 
-    font-family: var(--font-display);
-    font-size: 2.5rem;
+  .menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .subtitle { color: var(--color-primary); font-weight: bold; text-transform: uppercase; }
+    .section-title { 
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-top: 10px;
+      color: var(--color-white, #fff);
+    }
   }
 
   .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
   .category-card {
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 1 / 1;
     cursor: pointer;
-    // Nueva transición suave para el contenedor
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 3px solid transparent;
+    border: 2px solid transparent;
 
-    img {
+    .image-wrapper {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
     }
 
-    // Efecto mejorado al hacer hover
+    // Efecto hover premium
     &:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-10px);
       border-color: var(--color-primary);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    }
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 
-    &:hover img { 
-      transform: scale(1.15); 
+      img { transform: scale(1.1); }
+      .card-overlay { opacity: 1; }
     }
 
     .card-overlay {
       position: absolute;
-      bottom: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 1.5rem 1rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
-      text-align: center;
-      
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+
       h3 {
         margin: 0;
-        color: var(--color-text);
-        font-size: 1.2rem;
+        color: var(--color-primary);
+        font-size: 1.5rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-family: var(--font-display);
+        text-align: center;
+        padding: 0 10px;
+      }
+
+      .view-more {
+        margin-top: 15px;
+        color: white;
+        font-size: 0.8rem;
+        border: 1px solid var(--color-primary);
+        padding: 5px 15px;
+        border-radius: 20px;
+        text-transform: uppercase;
       }
     }
   }

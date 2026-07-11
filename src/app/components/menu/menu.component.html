@@ -1,12 +1,23 @@
 <section id="menu" class="menu-section">
-  <h2 class="section-title">En HYPE FRIES te ofrecemos:</h2>
-  
-  <div class="menu-grid">
-    <div class="category-card" *ngFor="let cat of categorias">
-  <img [src]="cat.imagen" [alt]="cat.titulo" loading="lazy">
-  <div class="card-overlay">
-    <h3>{{ cat.titulo }}</h3>
-  </div>
-</div>
+  <div class="container">
+    <div class="menu-header">
+      <span class="subtitle">Nuestra propuesta</span>
+      <h2 class="section-title">En HYPE FRIES te ofrecemos:</h2>
+    </div>
+    
+    <div class="menu-grid">
+      @for (cat of categorias; track cat.id) {
+        <div class="category-card">
+          <div class="image-wrapper">
+            <img [src]="cat.imagen" [alt]="cat.titulo" loading="lazy">
+          </div>
+          <div class="card-overlay">
+            <h3>{{ cat.titulo }}</h3>
+            <!-- Agregué este pequeño detalle para invitar al usuario a ver más -->
+            <span class="view-more">ver variedad</span>
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </section>
